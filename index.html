@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jogo da Memória</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <section>
+    <div class="title">Jogo da Memória 🧠</div>
+
+    <div class="card" id="card">
+      <div class="content" id="main-menu">
+        <button onclick="play()">Play</button>
+        <button onclick="sobre()">Sobre</button>
+      </div>
+
+      <div class="diff" id="menu-diff">
+        <h3>Escolha a Dificuldade:</h3>
+        <button onclick="escolherDificuldade('facil')">Fácil</button>
+        <button onclick="escolherDificuldade('medio')">Médio</button>
+        <button onclick="escolherDificuldade('dificil')">Difícil</button>
+      </div>
+    </div>
+
+    <div class="card2" id="game-screen">
+      <div id="game-board-container">
+        <h2 id="nivel-titulo"></h2>
+        <div id="game-board"></div>
+        <p id="tentativas">Tentativas: 0</p>
+        <button onclick="resetGame()">Voltar ao menu</button>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
