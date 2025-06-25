@@ -137,38 +137,49 @@ body {
   }
 
   /* Estilo para telas menores (celulares) */
-@media (max-width: 768px) {
-  .title {
-    width: 90%;
-    height: 80px;
-    font-size: 1.5em;
-    text-align: center;
+  @media (max-width: 768px) {
+    .title {
+      width: 90%;
+      height: auto;
+      font-size: 1.6em;
+      padding: 20px;
+      text-align: center;
+    }
+  
+    .card, .card2 {
+      width: 95%;
+      padding: 16px;
+      gap: 20px;
+    }
+  
+    .content, .diff {
+      gap: 20px;
+    }
+  
+    button {
+      width: 100%;
+      height: 70px;
+      font-size: 1.2em;
+    }
+  
+    #game-board {
+      grid-template-columns: repeat(3, 1fr); /* 3 colunas flexíveis */
+      gap: 10px;
+    }
+  
+    .card-item {
+      width: 80px;
+      height: 80px;
+      font-size: 1.5em;
+    }
+  
+    #tentativas {
+      font-size: 1em;
+      margin-top: -15px;
+    }
+  
+    #game-board-container {
+      gap: 30px;
+      padding-bottom: 30px;
+    }
   }
-
-  .card, .card2 {
-    width: 90%;
-    padding: 16px;
-    gap: 30px;
-  }
-
-  button {
-    width: 90%;
-    height: 80px;
-    font-size: 1.2em;
-  }
-
-  #game-board {
-    grid-template-columns: repeat(3, 80px);
-    gap: 8px;
-  }
-
-  .card-item {
-    width: 80px;
-    height: 80px;
-    font-size: 1.5em;
-  }
-
-  #tentativas {
-    margin-top: -20px;
-  }
-}
