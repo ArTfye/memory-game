@@ -4,7 +4,7 @@ function play() {
 }
 
 function sobre() {
-  alert("Este é um jogo da memória. Encontre todos os pares de cartas!");
+  alert("Este é um jogo da memória feito com JS. Encontre todos os pares de cartas!");
 }
 
 let cartas = [];
@@ -12,6 +12,7 @@ let cartasViradas = [];
 let paresEncontrados = 0;
 let totalPares = 0;
 let tentativas = 0;
+let tempoExibicao = 1500;
 
 const emojis = ['🍎','🍌','🍇','🍉','🍓','🍒','🍍','🥝','🥑','🍋','🥥','🍑'];
 
@@ -19,10 +20,21 @@ function escolherDificuldade(nivel) {
   let numPares;
 
   switch (nivel) {
-    case 'facil': numPares = 4; break;
-    case 'medio': numPares = 8; break;
-    case 'dificil': numPares = 12; break;
-    default: numPares = 4;
+    case 'facil':
+      numPares = 4;
+      tempoExibicao = 1500;
+      break;
+    case 'medio':
+      numPares = 8;
+      tempoExibicao = 1500;
+      break;
+    case 'dificil':
+      numPares = 12;
+      tempoExibicao = 2500;
+      break;
+    default:
+      numPares = 4;
+      tempoExibicao = 1500;
   }
 
   totalPares = numPares;
@@ -72,7 +84,6 @@ function iniciarJogo(numPares) {
     gameBoard.appendChild(cartaElemento);
   });
 
-  // Mostrar por 1 segundo e esconder
   const todasAsCartas = document.querySelectorAll('.card-item');
   todasAsCartas.forEach(carta => carta.classList.add('flipped'));
 
@@ -81,7 +92,7 @@ function iniciarJogo(numPares) {
       carta.textContent = '';
       carta.classList.remove('flipped');
     });
-  }, 1500);
+  }, tempoExibicao);
 }
 
 function virarCarta(e) {
@@ -147,3 +158,4 @@ function resetGame() {
   document.getElementById('main-menu').style.display = 'flex';
   document.getElementById('menu-diff').style.display = 'none';
 }
+
